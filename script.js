@@ -1,5 +1,3 @@
-//Color-code each time block based on past, present, and future when the time block is viewed.
-//Allow a user to enter an event when they click a time block
 //Save the event in local storage when the save button is clicked in that time block.
 //Persist events between refreshes of a page -->
 $(document).ready(function () {
@@ -8,11 +6,14 @@ $(document).ready(function () {
 
   const currentTime = dayjs().hour();
   const timeSlot = $(".time-row");
-  const saveBtn = $("saveBtn");
+  const saveBtn = $(".saveBtn");
   const hourEl = $(".hour");
   const inputEl = $(".task-input");
 
   addColours();
+  saveToStorage();
+  getFromStorage();
+
   //Check if the current hour is past/present/futures
   //add a special colour for each time slot
 
@@ -27,6 +28,30 @@ $(document).ready(function () {
         $(this).find(".task-input").addClass("future");
       } else if (currentTime > rowTime) {
         $(this).find(".task-input").addClass("past");
+      }
+    });
+  }
+
+  //Allow user to save the task in the local storage
+  function saveToStorage() {
+    saveBtn.on("click", function (e) {
+      e.preventDefault();
+      const line = $(this).closest(".time-row");
+      const taskId = line.attr("data-time");
+      const dataInput = line.find(".task-input").val();
+
+      localStorage.setItem(taskId, dataInput);
+    });
+  }
+
+  //get from localStorage
+  function getFromStorage() {
+    timeSlot.each(function () {
+      let rowTime = parseInt($(this).attr("data-time"), 10);
+      let savedTask = localStorage.getItem(rowTime);
+
+      if (savedTask !== null) {
+        $(this).find(".task-input").val(savedTask);
       }
     });
   }
