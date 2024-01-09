@@ -18,8 +18,7 @@ $(document).ready(function () {
   function addColours() {
     timeSlot.each(function () {
       let rowTime = parseInt($(this).attr("data-time"), 10);
-      console.log(rowTime);
-      console.log(currentTime);
+
       if (currentTime === rowTime) {
         $(this).find(".task-input").addClass("present");
       } else if (currentTime < rowTime) {
