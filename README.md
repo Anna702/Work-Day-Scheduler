@@ -1,91 +1,39 @@
 # Work-Day-Scheduler
 
-A simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery.
+A simple calendar application that allows a user to save events for each hour of the day. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery.
 
-# Third-Party APIs: Work Day Scheduler
+## Description
 
-## Your Task
+This app offers the following features:
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+- Displays the current day prominently at the top of the calendar upon opening the planner.
 
-You'll need to use the [Day.js](https://day.js.org/docs/en/display/format) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+- Presents time blocks for standard business hours as the user scrolls down.
 
-## User Story
+- Each time block is color-coded to indicate whether it is in the past, present, or future.
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+- Users can enter tasks by clicking on a time block.
 
-## Acceptance Criteria
+- Users can save tasks in local storage by clicking the save button within a time block.
 
-The app should:
+- Events persist even when the page is refreshed.
 
-- Display the current day at the top of the calender when a user opens the planner.
+## Project status
 
-- Present time blocks for standard business hours when the user scrolls down.
+Deployed: https://anna702.github.io/Work-Day-Scheduler/
 
-- Color-code each time block based on past, present, and future when the time block is viewed.
+## Project Screenshot
 
-- Allow a user to enter an event when they click a time block
+![Anna-Chernova-Work-Day-Scheduler](./images/Work-Day-Scheduler-Screenshot.png)
 
-- Save the event in local storage when the save button is clicked in that time block.
+## Project GIF
 
-- Persist events between refreshes of a page
+![Code-Quiz-Gif](./images/work_day_scheduler.gif)
 
-The following animation demonstrates the application functionality:
+## License
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./images/05-third-party-apis-homework-demo.gif)
+MIT License
 
-## Grading Requirements
+## Q&A
 
-This homework is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-- Satisfies all of the above acceptance criteria plus the following:
-
-  - Uses a date utility library to work with date and time
-
-### Deployment: 32%
-
-- Application deployed at live URL
-
-- Application loads with no errors
-
-- Application GitHub URL submitted
-
-- GitHub repo contains application code
-
-### Application Quality: 15%
-
-- Application user experience is intuitive and easy to navigate
-
-- Application user interface style is clean and polished
-
-- Application resembles the mock-up functionality provided in the homework instructions
-
-### Repository Quality: 13%
-
-- Repository has a unique name
-
-- Repository follows best practices for file structure and naming conventions
-
-- Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-- Repository contains multiple descriptive commit messages
-
-- Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-- The URL of the deployed application
-
-- The URL of the GitHub repository, with a unique name and a README describing the project
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+In case you have any questions, feel free to contact me at <a href="mailto:annanvks@gmail.com?">annanvks@gmail.com</a>.
