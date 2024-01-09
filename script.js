@@ -12,18 +12,22 @@ $(document).ready(function () {
   const hourEl = $(".hour");
   const inputEl = $(".task-input");
 
+  addColours();
   //Check if the current hour is past/present/futures
   //add a special colour for each time slot
 
-  timeSlot.each(function () {
-    let rowTime = parseInt($(this).attr("data-time"), 10);
-
-    if (currentTime === rowTime) {
-      $(this).addClass("present");
-    } else if (currentTime < rowTime) {
-      $(this).addClass("future");
-    } else if (currentTime > rowTime) {
-      $(this).addClass("past");
-    }
-  });
+  function addColours() {
+    timeSlot.each(function () {
+      let rowTime = parseInt($(this).attr("data-time"), 10);
+      console.log(rowTime);
+      console.log(currentTime);
+      if (currentTime === rowTime) {
+        $(this).addClass("present");
+      } else if (currentTime < rowTime) {
+        $(this).addClass("future");
+      } else if (currentTime > rowTime) {
+        $(this).addClass("past");
+      }
+    });
+  }
 });
