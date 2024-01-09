@@ -22,11 +22,11 @@ $(document).ready(function () {
       console.log(rowTime);
       console.log(currentTime);
       if (currentTime === rowTime) {
-        $(this).addClass("present");
+        $(this).find(".task-input").addClass("present");
       } else if (currentTime < rowTime) {
-        $(this).addClass("future");
+        $(this).find(".task-input").addClass("future");
       } else if (currentTime > rowTime) {
-        $(this).addClass("past");
+        $(this).find(".task-input").addClass("past");
       }
     });
   }
