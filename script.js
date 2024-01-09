@@ -5,29 +5,25 @@
 $(document).ready(function () {
   const currentDay = dayjs();
   $("#currentDay").text(currentDay.format("D MMM YYYY"));
+
+  const currentTime = dayjs().hour();
+  const timeSlot = $(".time-row");
+  const saveBtn = $("saveBtn");
+  const hourEl = $(".hour");
+  const inputEl = $(".task-input");
+
+  //Check if the current hour is past/present/futures
+  //add a special colour for each time slot
+
+  timeSlot.each(function () {
+    let rowTime = parseInt($(this).attr("data-time"), 10);
+
+    if (currentTime === rowTime) {
+      $(this).addClass("present");
+    } else if (currentTime < rowTime) {
+      $(this).addClass("future");
+    } else if (currentTime > rowTime) {
+      $(this).addClass("past");
+    }
+  });
 });
-
-//Present time blocks for standard business hours when the user scrolls down (9 - 17).
-for (let i = 9; i <= 17; i++) {
-  let currentHour = dayjs().hour();
-  let rowEl = $("<div>").addClass("row");
-  let hourEl = $("<div>")
-    .addClass("col-2 hour")
-    .text(dayjs(i, "H").format("hA"));
-  let eventEl = $("<input>").addClass("col-8 event").attr("id", i);
-  let saveBtn = $("<button>").addClass("col-2 saveBtn").text("Save");
-
-  if (i < currentHour) {
-    eventEl.addClass("past");
-  } else if (i === currentHour) {
-    eventEl.addClass("present");
-  } else {
-    eventEl.addClass("future");
-  }
-
-  rowEl.append(hourEl, eventEl, saveBtn);
-  $(".container").append(rowEl);
-}
-
-//handleTaskSubmit
-//printTask
