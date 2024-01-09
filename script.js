@@ -7,8 +7,6 @@ $(document).ready(function () {
   const currentTime = dayjs().hour();
   const timeSlot = $(".time-row");
   const saveBtn = $(".saveBtn");
-  const hourEl = $(".hour");
-  const inputEl = $(".task-input");
 
   addColours();
   saveToStorage();
